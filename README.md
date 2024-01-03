@@ -2,8 +2,7 @@
 
 - Lecture: [즐거운 자바 63: 회원관리 프로그램](https://www.youtube.com/watch?v=HEsAMjd8zpo)
 - UML: https://draw.io
-- 
-
+- .gitignore: https://www.toptal.com/developers/gitignore/
 
 ## 회원 관리 프로그램 만들기
 
