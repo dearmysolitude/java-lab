@@ -24,7 +24,7 @@ public class UserDao {
     public List<User> getUsers() {
         File file = new File(filename);
         
-        if(file.exists()) {
+        if(!file.exists()) {
             return new ArrayList<>();
         }
         

@@ -4,6 +4,10 @@
 - UML: https://draw.io
 - .gitignore: https://www.toptal.com/developers/gitignore/
 
+## 특징
+
+객체 직렬화를 통해 인스턴스 읽고 쓰는 작업을 용이하게 하였음
+
 ## 회원 관리 프로그램 만들기
 
 1. 회원 등록

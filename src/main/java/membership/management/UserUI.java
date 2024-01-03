@@ -44,16 +44,16 @@ public class UserUI {
     }
     
     public void printUserList(List<User> users) {
-        System.out.println("email            이름            생년");
-        System.out.println("====================================");
+        System.out.println("email                  이름                 생년");
+        System.out.println("====================================================");
         for(int i = 0; i < users.size(); i ++) {
             User user = users.get(i);
             System.out.print(user.getEmail());
             System.out.print("           ");
             System.out.print(user.getName());
             System.out.print("           ");
-            System.out.print(user.getBirthYear());
-
+            System.out.println(user.getBirthYear());
+            System.out.println();
         }
     }
 }
