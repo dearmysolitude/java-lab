@@ -1,4 +1,4 @@
-package Application;
+package membership.management;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class UserDao {
         }
     }
     
-    public List<User> getUser() {
+    public List<User> getUsers() {
         File file = new File(filename);
         
         if(file.exists()) {

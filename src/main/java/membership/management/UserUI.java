@@ -1,4 +1,4 @@
-package Application;
+package membership.management;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -13,7 +13,7 @@ public class UserUI {
     public int menu() {
         System.out.println("1. 회원 등록");
         System.out.println("2. 회원 목록 보기");
-        System.out.println("3. 종료");
+        System.out.println("5. 종료");
         int menuId = -1;
         
         try {
@@ -26,7 +26,7 @@ public class UserUI {
         return menuId;
     }
     
-    public User regMenu() {
+    public User regUser() {
         try {
             System.out.println("email을 입력하세요");
             String email = br.readLine();

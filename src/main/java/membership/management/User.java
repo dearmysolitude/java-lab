@@ -1,4 +1,4 @@
-package Application;
+package membership.management;
 
 import java.io.Serializable;
 
