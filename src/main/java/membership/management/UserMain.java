@@ -26,8 +26,7 @@ public class UserMain {
             } else if(menuId == 3) {
                 System.out.println("수정할 유저의 일련 번호를 입력하세요.");
                 userUI.printUserList(users);
-                int memberId = -1;
-                userUI.editUser(users.get(memberId));
+                userUI.editUser(users);
             }
         }
     }

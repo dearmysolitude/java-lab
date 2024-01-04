@@ -60,9 +60,12 @@ public class UserUI {
         }
     }
     
-    public void editUser(User user) {
-        
+    public void editUser(List<User> users) {
         try {
+            String strMemberId = br.readLine();
+            int memberId = Integer.parseInt(strMemberId);
+            User user = users.get(memberId);
+            
             System.out.println("email을 입력하세요");
             String email = br.readLine();
             System.out.println("이름을 입력하세요.");
