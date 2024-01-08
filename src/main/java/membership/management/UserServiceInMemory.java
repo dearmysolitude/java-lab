@@ -52,9 +52,8 @@ public class UserServiceInMemory implements UserService {
     public Iterator<User> getUsers() {
         return users.iterator();
     }
-
-    @Override
-    public boolean exists(String email) {
+    
+    private boolean exists(String email) {
         return findIndex(email) > -1;
     }
     

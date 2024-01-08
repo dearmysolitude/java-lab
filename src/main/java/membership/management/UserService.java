@@ -12,8 +12,4 @@ public interface UserService {
     public boolean deleteUser(String email); // 작업 성공 여부를 리턴
     // 모든 회원 정보를 반환한다.
     public Iterator<User> getUsers();
-    
-    // 해당 이메일에 해당하는 유저가 있을경우 0 보다 큰 값을 반환
-    public boolean exists(String email);
-    
 }

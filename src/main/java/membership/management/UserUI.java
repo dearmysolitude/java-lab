@@ -57,7 +57,6 @@ public class UserUI {
             System.out.print(user.getName());
             System.out.print("           ");
             System.out.println(user.getBirthYear());
-            System.out.println();
         }
     }
     
