@@ -58,6 +58,9 @@ uremail@gmail.com 홍길동 1980
   - 유저 정보 리턴
 - listUser()
   - 화면에 회원 정보 출력: List<User>
+- **New:** editUser()
+  - 유저의 정보를 출력한 후, 수정할 userId를 입력받음
+  - 입력 받고 수정할 유저 정보가 없을 경우 메세지 출력: '수정할 유저의 정보가 없습니다.' 를 출력
 
 ### User
 
@@ -67,7 +70,7 @@ uremail@gmail.com 홍길동 1980
 
 ### UserDAO(Data Access Obejct)
 
-- 회원 정보 저장을 위한 클래스
+- User 정보 저장을 위한 클래스: 파일에 읽고 쓰는 역할
 - 생성자: UserDAO(파일명)
 - saveUsers(List<User>)
   - 유저 정보를 저장함
@@ -79,3 +82,7 @@ uremail@gmail.com 홍길동 1980
 
 - 메인 메서드를 가진 진입점
 - UserUI와 UserDAO를 사용
+
+### NEW UserService / UserServiceInMemory
+
+- 파일에서 읽어온 유저 리스트를 메모리 상에서 조작하기 위한 클래스
