@@ -1,8 +1,5 @@
 package membership.management;
 
-import java.util.Iterator;
-import java.util.List;
-
 public class UserMain {
     public static void main(String[] args) {
         UserUI userUI = new UserUI();
