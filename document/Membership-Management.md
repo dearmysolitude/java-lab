@@ -1,14 +1,8 @@
 # 회원관리 프로그램
 
-- **분류: 개념 적용 / 미니 프로젝트 / Java**
-- Lecture: [즐거운 자바 63: 회원관리 프로그램](https://www.youtube.com/watch?v=HEsAMjd8zpo)
-- UML: https://draw.io
-- .gitignore: https://www.toptal.com/developers/gitignore/
+## 패키지
 
-## 특징
 
-- 객체 직렬화를 통해 인스턴스 읽고 쓰는 작업을 용이하게 하였음
-- 인터페이스 리팩터링을 통해 코드의 재사용성을 높임
 
 ## 기능 요구사항
 
