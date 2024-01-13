@@ -16,5 +16,37 @@
     3. A 클라이언트가 보낸 "안녕하세요"를 읽어들인다.
     4. 서버에 접속하고 있는 모든 클라이언트에게 "안녕하세요" 메세지를 전송한다: 브로드캐스팅
 
+3. 채팅 프로그램
+   1. 1 단계: 채팅 대기방
+      1. `java 패키지명.ChatClient 닉네임`으로 서버에 접속
+      2. 접속한 모든 사용자에게 "홍길동님이 접속하였습니다."
+      3. 채팅을 입력한 후 [enter]를 입력하면 모든 사용자(나 포함)에게 내 메세지가 전달
+      4. /quit을 입력하면 연결이 끊어진다. 연결이 끊어질 때 모든 사용자에게 "홍길동님이 대화방에서 나갔습니다." 출력
+      5. 강제로 연결을 끊었을 때(프로그램 강제 종료)에도 동일하게 출력
+   2. 2 단계: 채팅방, 대기방
+   ...
+
 ## 클래스 구성
 
+### 채팅 서버
+
+- ChatServer
+  - 채팅 서버의 메인 메서드 포함
+  - ServerSocket을 접속하는 클라이언트마다 생성, ChatThread를 스레드로 생성
+  - 생성된 PrintWriter 객체 모두를 가지고 있는 List<PrintWriter> outList를 필드로 가지고 있음
+  - ChatThread에는 생성된 socket과 가지고 있는 outList를 전달함
+- ChatThread
+  - 필드로 Socket, List<PrintWriter>, PrintWriter, BufferdReader를 가지고 있음
+  - 생성자는 Socket과 outList을 전달받음. outList에는 생성된 PrintWriter를 추가한다.
+  - 클라이언트가 접속할 때마다 클라이언트가 가지고 있는 PrintWriter를 추가하고 접속이 종료될 때마다 삭제함
+  - run 메서드는 outList를 계속해서 돌며 PrintWriter가 각 클라이언트로부터 전달받은 입력값을 출력함.
+
+### 채팅 클라이언트
+
+- ChatClient
+  - 메인 메서드를 가지고 있는 클라이언트 프로그램 진입점
+  - argument로 사용할 이름을 입력받는다.
+  - 서버와 마찬가지로 BufferedReader, PrintWriter를 in과 out으로 가지고 있고, 키보드로부터 입력 받을 BufferedReader를 하나 더 필드로 가진다.
+  - 
+- InputThread
+  - 

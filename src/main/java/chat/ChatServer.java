@@ -14,6 +14,7 @@ public class ChatServer {
         List<PrintWriter> outList = Collections.synchronizedList(new ArrayList<>());
         while(true) {
             Socket socket = serverSocket.accept();
+            System.out.println("접속: " + socket);
 
             ChatThread chatThread = new ChatThread(socket, outList);
             chatThread.start();

@@ -2,7 +2,6 @@ package chat;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Collection;
 import java.util.List;
 
 public class ChatThread extends Thread {
@@ -27,6 +26,7 @@ public class ChatThread extends Thread {
         }
     }
 
+    @Override
     public void run() {
         String line = null;
         try {
@@ -34,6 +34,7 @@ public class ChatThread extends Thread {
                 for(int i = 0; i < outList.size(); i++) { // 접속한 모든 클라이언트에 입력받은 라인을 써서 보낸다.
                     PrintWriter o = outList.get(i);
                     o.println(line);
+                    o.flush();
                 }
             }
         } catch (IOException ioException) {
@@ -45,6 +46,18 @@ public class ChatThread extends Thread {
                 e.printStackTrace();
             }
             // 모든 연결이 끊어졌을 때 메세지를 보낼 필요가 있다.
+            
+            for(int i = 0; i < outList.size(); i++) {
+                PrintWriter o = outList.get(i);
+                o.println("어떤 클라이언트의 접속이 끊어졌습니다.");
+                o.flush();
+            }
+
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         // 3. 클라이언트가 보낸 메세지를 읽는다.
         // 4. 접속한 모든 클라이언트에게 메세지를 보낸다. (현재 접속된 모든 클라이언트에 쓸 수 있는 객체가 필요하다.)
