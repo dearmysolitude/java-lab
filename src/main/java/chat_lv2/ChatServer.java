@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class ChatServer {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception{ // 임시
         ServerSocket serverSocket = new ServerSocket(8888);
         
         List<ChatThread> list = Collections.synchronizedList(new ArrayList<>()); //동시성 문제를 예방: list에 동시에 접근하지 못하도록 해 줌

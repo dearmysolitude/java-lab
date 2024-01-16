@@ -6,8 +6,8 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ChatClient extends Thread{
-    public static void main(String[] args) throws Exception {
+public class ChatClient{
+    public static void main(String[] args) throws Exception { // 임시
         
         if(args.length != 1) {
             System.out.println("사용법: java chat_lv2.ChatClient <닉네임>");
@@ -47,19 +47,19 @@ public class ChatClient extends Thread{
         try {
             br.close();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         
         try {
             pw.close();
         } catch (Exception e) {
-            
+            e.printStackTrace();
         }
         
         try {
             socket.close();
         } catch (Exception e) {
-            
+            e.printStackTrace();
         }
     }
 }

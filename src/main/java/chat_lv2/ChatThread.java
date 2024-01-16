@@ -27,7 +27,7 @@ public class ChatThread extends Thread{
         this.list.add(this);
     }
      
-    public void sendMessage (String msg) {
+    private void sendMessage (String msg) {
         pw.println(msg);
         pw.flush();
     }
@@ -74,19 +74,14 @@ public class ChatThread extends Thread{
     }
     
     private void broadcast(String msg, boolean includeMe) {
-        List<ChatThread> chatThreads = new ArrayList<>();
         // 중간에 리스트에서 제거가 되더라도 멈추지 않고 메세지를 보내도록 처리하기 위함.
-        for(int i = 0; i < this.list.size(); i++) {
-            chatThreads.add(this.list.get(i));
-        }
+        List<ChatThread> chatThreads = new ArrayList<>(this.list);
         
         try {
             for(int i = 0; i < list.size(); i++) {
                 ChatThread ct = chatThreads.get(i);
-                if(!includeMe) {
-                    if(ct == this) {
-                        continue;
-                    }
+                if(!includeMe && (ct == this)) {
+                    continue;
                 }
                 ct.sendMessage(msg);
             }
