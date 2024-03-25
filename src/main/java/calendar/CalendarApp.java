@@ -1,4 +1,4 @@
-package basic_java;
+package calendar;
 
 import java.util.Scanner;
 
